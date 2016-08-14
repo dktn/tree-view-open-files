@@ -1,9 +1,9 @@
 {
   "name": "tree-view-open-files-dktn",
-  "main": "./lib/tree-view-open-files",
+  "main": "./lib/tree-view-open-files-dktn",
   "version": "0.3.0",
   "description": "Show open files in a list above the tree view.",
-  "repository": "https://github.com/dktn/tree-view-open-files",
+  "repository": "https://github.com/dktn/tree-view-open-files-dktn",
   "license": "MIT",
   "engines": {
     "atom": ">=1.1.0"
