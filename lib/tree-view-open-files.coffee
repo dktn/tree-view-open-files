@@ -7,7 +7,7 @@ module.exports =
 	config:
 		maxHeight:
 			type: 'integer'
-			default: 250
+			default: 1000
 			min: 0
 			description: 'Maximum height of the list before scrolling is required. Set to 0 to disable scrolling.'
 
@@ -19,13 +19,16 @@ module.exports =
 				@treeViewOpenFilesView.show()
 
 			atom.commands.add 'atom-workspace', 'tree-view:toggle', =>
-				if treeView.treeView?.is(':visible')
-					@treeViewOpenFilesView.show()
-				else
-					@treeViewOpenFilesView.hide()
+				@treeViewOpenFilesView.toggle()
 
-			atom.commands.add 'atom-workspace', 'tree-view:show', =>
+			atom.commands.add 'atom-workspace', 'tree-view-open-files:show', =>
 				@treeViewOpenFilesView.show()
+
+			atom.commands.add 'atom-workspace', 'tree-view-open-files:hide', =>
+				@treeViewOpenFilesView.hide()
+
+			atom.commands.add 'atom-workspace', 'tree-view-open-files:toggle', =>
+				@treeViewOpenFilesView.toggle()
 
 	deactivate: ->
 		@treeViewOpenFilesView.destroy()
